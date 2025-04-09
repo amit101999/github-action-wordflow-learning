@@ -13,3 +13,7 @@ jobs :
     steps:
       - name: "print index page"
         run: echo "hello world"
+
+
+      - name : "print current date"
+        run : date
