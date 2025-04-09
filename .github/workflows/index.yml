@@ -1,15 +1,15 @@
 name : "index file yaml"
 
 # this will tigger the action when push event will happen in master and production 
-on :
-  push : 
-    branches : 
+on:
+  push: 
+    branches: 
       - master
       - production
 
 jobs : 
-  indexFile :
-  runs-on : ubuntu-latest
-  steps :
-   - name : "print index page"
-     run : echo "hello world"
+  indexFile:
+  runs-on: ubuntu-latest
+  steps:
+    - name: "print index page"
+    run: echo "hello world"
