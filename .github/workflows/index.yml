@@ -6,14 +6,36 @@ on:
     branches: 
       - master
       - production
+  schedule: 
+    - cron: "0 10 * * 2,4"
+    # above line means every schedule this according to the time
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+  workflow_dispatch:
+    
 
 jobs : 
   indexFile:
+    # we just add additional condition event is push or pull_request etc..
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: "print index page"
         run: echo "hello world"
 
+  on_pull_request_closed:
+    if: github.event_name == 'pull_request' && github.event.action=='closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "pull request action"
+        run: echo "pull request is closed"
 
-      - name : "print current date"
-        run : date
+  on_schedule:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "running schedule"
+        run: echo "Running schedule"

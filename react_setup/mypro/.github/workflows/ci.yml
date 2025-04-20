@@ -1,0 +1,16 @@
+name : "simple react piple line"
+
+on: 
+    push:
+        branches:
+            - main
+            - _master
+
+
+jobs: 
+     build-and-test:
+        run-on: "ubuntu-latest"
+
+        steps:
+            - name: "setup node js"
+              uses: actions/setup-node@v4
