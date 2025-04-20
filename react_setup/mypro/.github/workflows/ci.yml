@@ -1,18 +1,14 @@
-name : "simple react piple line"
-
-on: 
-    push:
-        branches:
-            - test
-            - _master
-
-
-jobs: 
-     build-and-test:
-        runs-on: "ubuntu-latest"
-
-        steps:
-            - name: "setup node js"
-              uses: actions/setup-node@v4
-              with:
-                node-version : "21" 
+name: simple react piple line
+on:
+  push:
+    branches:
+      - test
+      - master
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "setup node js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21"
