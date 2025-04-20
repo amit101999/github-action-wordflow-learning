@@ -3,7 +3,7 @@ name : "simple react piple line"
 on: 
     push:
         branches:
-            - main
+            - test
             - _master
 
 
