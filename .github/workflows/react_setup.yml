@@ -19,6 +19,9 @@ jobs:
             
            - name: "clone repository"
              uses: actions/checkout@v2
+
+            -name: "chnage directory"
+             run: cd react_setup/mypro
              
            - name: "install dependencies"
              run: npm install
